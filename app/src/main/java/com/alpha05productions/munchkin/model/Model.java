@@ -8,6 +8,20 @@ import java.util.List;
 
 public class Model
 {
+    public void progressGameState()
+    {
+        currentState = currentState.progressState(this);
+    }
+
+    public void killPlayer(Player p)
+    {
+        players.remove(p);
+    }
+
+    public Monster openDoor()
+    {
+        return doors.remove(0);
+    }
 
     private IGameState currentState;
     private List<Monster> doors;
