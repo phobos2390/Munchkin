@@ -8,9 +8,16 @@ import java.util.List;
 
 public class Model
 {
+    public Model(List<Monster> doorList, List<Weapon> treasureList, List<Player> playerList)
+    {
+        doors = doorList;
+        treasures = treasureList;
+        players = playerList;
+    }
+
     public void progressGameState()
     {
-        currentState = currentState.progressState(this);
+        currentState = currentState.onProgressState(this);
     }
 
     public void killPlayer(Player p)
@@ -23,7 +30,20 @@ public class Model
         return doors.remove(0);
     }
 
+    public Weapon takeTreasure()
+    {
+        return treasures.remove(0);
+    }
+
+    public Player getNextPlayer()
+    {
+        playerIterator = (playerIterator + 1) % players.size();
+        return players.get(playerIterator);
+    }
+
+    private int playerIterator;
     private IGameState currentState;
     private List<Monster> doors;
+    private List<Weapon> treasures;
     private List<Player> players;
 }

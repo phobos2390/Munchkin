@@ -6,5 +6,5 @@ package com.alpha05productions.munchkin.model;
 
 interface IGameState
 {
-    IGameState progressState(Model e);
+    IGameState onProgressState(Model e);
 }

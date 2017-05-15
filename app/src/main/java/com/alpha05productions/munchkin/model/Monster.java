@@ -16,6 +16,11 @@ public class Monster
         return treasure + bonusTreasure;
     }
 
+    public IDefeatEvent getDefeatEvent()
+    {
+        return defeatEvent;
+    }
+
     private int level;
     private int treasure;
     private int bonusPower;
