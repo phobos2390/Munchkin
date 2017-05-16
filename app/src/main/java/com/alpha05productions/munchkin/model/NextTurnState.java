@@ -9,6 +9,6 @@ public class NextTurnState implements IGameState
     @Override
     public IGameState onProgressState(Model e)
     {
-        return null;
+        return new OpenDoorState(e.getNextPlayer());
     }
 }

@@ -22,6 +22,14 @@ public class Model
 
     public void killPlayer(Player p)
     {
+        if(playerIterator >= players.indexOf(p))
+        {
+            playerIterator--;
+            if(playerIterator < 0)
+            {
+                playerIterator += players.size() - 1;
+            }
+        }
         players.remove(p);
     }
 

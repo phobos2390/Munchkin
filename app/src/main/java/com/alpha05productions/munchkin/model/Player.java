@@ -6,6 +6,13 @@ package com.alpha05productions.munchkin.model;
 
 public class Player
 {
+    public Player()
+    {
+        level = 0;
+        bonusPower = 0;
+        temporaryBonusPower = 0;
+    }
+
     public int getPower()
     {
         return level + bonusPower + temporaryBonusPower;

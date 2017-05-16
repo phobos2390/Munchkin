@@ -6,9 +6,17 @@ package com.alpha05productions.munchkin.model;
 
 public class OpenDoorState implements IGameState
 {
+    public OpenDoorState(Player currentPlayer)
+    {
+        player = currentPlayer;
+    }
+
     @Override
     public IGameState onProgressState(Model e)
     {
-        return null;
+        Monster monsterBehindDoor = e.openDoor();
+        return new CombatState(monsterBehindDoor,player);
     }
+
+    private Player player;
 }

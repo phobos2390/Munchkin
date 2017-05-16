@@ -6,6 +6,13 @@ package com.alpha05productions.munchkin.model;
 
 public class Monster
 {
+    public Monster(int levelOfMonster, int numberOfTreasures, IDefeatEvent onDefeatEvent)
+    {
+        level = levelOfMonster;
+        treasure = numberOfTreasures;
+        defeatEvent = onDefeatEvent;
+    }
+
     public int getPower()
     {
         return level + bonusPower;

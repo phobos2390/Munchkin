@@ -20,7 +20,8 @@ public class CombatState implements IGameState
             int treasureAmount = monster.getTreasure();
             for(int i = 0; i < treasureAmount; i++)
             {
-                e.takeTreasure();
+                Weapon w = e.takeTreasure();
+                player.addBonusPower(w.getPower());
             }
         }
         else
